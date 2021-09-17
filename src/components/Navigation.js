@@ -1,9 +1,9 @@
 import { Nav } from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
 
-export default function Navigation() {
+export default function Navigation({location}) {
     return (
-        <Nav justify variant="tabs" defaultActiveKey="/intro">
+        <Nav justify variant="tabs" defaultActiveKey={location}>
             <Nav.Item>
                 <LinkContainer to="/intro">
                     <Nav.Link>Intro</Nav.Link>
