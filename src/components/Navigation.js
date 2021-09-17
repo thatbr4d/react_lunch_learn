@@ -10,9 +10,14 @@ export default function Navigation({location}) {
                 </LinkContainer> 
             </Nav.Item>
             <Nav.Item>
-                <LinkContainer to="/sample">
-                    <Nav.Link>Sample</Nav.Link>
+                <LinkContainer to="/hideshow">
+                    <Nav.Link>Hide/Show</Nav.Link>
                 </LinkContainer>
+            </Nav.Item>
+            <Nav.Item>
+                <LinkContainer to="/addanother">
+                    <Nav.Link>Add Another</Nav.Link>
+                </LinkContainer>  
             </Nav.Item>
         </Nav>
     )

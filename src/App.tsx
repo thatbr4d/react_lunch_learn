@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
 import { Route, Switch, useLocation} from 'react-router-dom';
-import Sample from './views/Sample';
 import Intro  from './views/Intro';
 import Navigation from './components/Navigation';
+import HideShow from './views/HideShow';
+import AddAnother from './views/AddAnother';
 
 function App() {
   const location = useLocation();
@@ -23,7 +24,8 @@ function App() {
             <Switch>
               <Route exact path="/" component={Intro} />
               <Route path="/intro" component={Intro} />
-              <Route path="/sample" component={Sample} />
+              <Route path="/hideshow" component={HideShow} />
+              <Route path="/addanother" component={AddAnother} />
             </Switch>
         </Row>
       </Container>
