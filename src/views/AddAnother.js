@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Form, Button, Col } from "react-bootstrap";
+import EmailInput from '../components/EmailInput';
 
 export default function AddAnother() {
     const [names, setNames] = useState([
@@ -15,15 +16,16 @@ export default function AddAnother() {
     const addAnother = () => {
         setNames([...names, { firstName: ''}]);
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("SubmitData", names);
+    }
     
     return (
-        <Col lg="auto" className="mt-5">
             <Form>
-                <Form.Group className="mb-3">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                    <Form.Text muted>I'm going to send this to everyone</Form.Text>
-                </Form.Group>
+                
+                <EmailInput label="Email" placeholder="Enter Email" note="I'm going to send this to everyone" />
 
                 {
                     names.map((name, index) => (
@@ -38,10 +40,9 @@ export default function AddAnother() {
                     <Button variant="secondary" onClick={() => addAnother()}>Add Another</Button>
                 </div>
                 <div className="mt-5">
-                    <Button variant="primary" type="submit">Submit</Button>
+                    <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
                 </div>
             </Form>
-        </Col>
     )
 }
 

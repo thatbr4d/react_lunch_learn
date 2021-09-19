@@ -1,17 +1,19 @@
 import { useState } from 'react';
 import { Form, Button, Col } from "react-bootstrap";
+import EmailInput from '../components/EmailInput';
 
 export default function HideShow() {
     const [isVisibleFName, setVisibleFName] = useState(true);
+    const [isVisibleLName, setVisibleLName] = useState(true);
     
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
     return (
-        <Col lg="auto" className="mt-5">
             <Form>
-                <Form.Group className="mb-3">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                    <Form.Text muted>I'm going to send this to everyone</Form.Text>
-                </Form.Group>
+                
+                <EmailInput label="Email" placeholder="Enter Email" note="I'm going to send this to everyone" />
 
                 { 
                     isVisibleFName ? 
@@ -25,10 +27,28 @@ export default function HideShow() {
                 <div>
                     <Button variant="secondary" onClick={() => setVisibleFName(!isVisibleFName)}>Show/Hide</Button>
                 </div>
+
+                { 
+                    isVisibleLName ? 
+                    <Form.Group className="mb-3 mt-3">
+                        <Form.Label>Last Name</Form.Label>
+                        <Form.Control type="text" />
+                    </Form.Group> :
+                    null
+                }
+
+                {['radio'].map((type) => (
+                    <div key={`inline-${type}`} className="mb-3">
+                        <Form.Check inline label="Show" name="group1" type={type} id={`inline-${type}-1`} onClick={() => setVisibleLName(true)} />
+                        <Form.Check inline label="Hide" name="group1" type={type} id={`inline-${type}-2`} onClick={() => setVisibleLName(false)} />
+                    </div>
+                ))}
+
+
+
                 <div className="mt-5">
                     <Button variant="primary" type="submit">Submit</Button>
                 </div>
             </Form>
-        </Col>
     )
 }
