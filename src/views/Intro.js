@@ -1,8 +1,9 @@
-import logo from '../logo.svg';
-
+import logo from "../logo.svg";
 
 export default function Intro() {
-    return (
-        <img src={logo} className="App-logo" alt="logo" />
-    )
+  return (
+    <div className="w-50 mx-auto">
+      <img src={logo} className="App-logo img-fluid" alt="logo" />
+    </div>
+  );
 }
