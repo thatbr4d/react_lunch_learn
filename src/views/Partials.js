@@ -1,5 +1,4 @@
 import HideShow from "./HideShow";
-import { Col } from "react-bootstrap";
 
 export default function Partials() {
     return (
