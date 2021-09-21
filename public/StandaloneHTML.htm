@@ -9,7 +9,27 @@
   </head>
   <body>
     <h1>Stand Alone HTML (Example for existing projects)</h1>
-    <div id="myReactContainer"></div>
+
+    <form id="myForm">
+      <div>
+        <label>Some Input</label>
+      </div>
+      <div>
+        <input type="text" name="input1" />
+      </div>
+
+      <div>
+        <label>Another Input</label>
+      </div>
+      <div>
+        <input type="text" name="input2" />
+      </div>
+
+      <div id="myReactContainer"></div>
+
+      <hr />
+      <input type="button" id="sub" value="submit" />
+    </form>
 
     <!-- Load React. -->
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
@@ -27,5 +47,13 @@
 
     <!-- Load our React component. -->
     <script type="text/babel" src="StandaloneComponent.js"></script>
+
+    <script type="text/javascript">
+      var btn = document.getElementById("sub");
+      btn.onclick = function (e) {
+        var items = document.getElementById("hiddenItems");
+        console.log(items.value);
+      };
+    </script>
   </body>
 </html>

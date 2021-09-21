@@ -2,16 +2,30 @@
 
 const e = React.createElement;
 
-class StandaloneComponent extends React.Component {
+const StandaloneComponent = () => {
+    const [items, setItems] = React.useState(["apple", "orange"])
+    const [currentItem, setCurrentItem] = React.useState("")
 
-    render() {
-        return (
-            <div>
-                Hello World
-            </div>
-            //TODO: Do something more impressive here
-        );
+    const addAnother = () => {
+        setItems([...items, currentItem]);
+        setCurrentItem("");
     }
+
+    return (
+        <div>
+            <ul>
+                {
+                    items.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))
+                }
+            </ul>
+            <input value={currentItem} onChange={(e) => setCurrentItem(e.target.value)} />
+            <button type="button" onClick={addAnother}>Add</button>
+
+            <input type="hidden" id="hiddenItems" value={items} />
+        </div>
+    )
 }
 
 const domContainer = document.querySelector('#myReactContainer');
