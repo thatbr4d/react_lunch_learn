@@ -30,7 +30,6 @@ export default function AddAnother() {
 
     return (
         <Form>
-
             <EmailInput label="Email" placeholder="Enter Email" note="I'm going to send this to everyone" />
 
             {

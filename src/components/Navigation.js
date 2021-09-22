@@ -29,8 +29,13 @@ export default function Navigation({ location }) {
                     <Nav.Link>Add Another Extreme</Nav.Link>
                 </LinkContainer>
             </Nav.Item>
+            <Nav.Item>
+                <LinkContainer to="/typescript">
+                    <Nav.Link>Typescript</Nav.Link>
+                </LinkContainer>
+            </Nav.Item>
+
         </Nav>
         //TODO: add modal sample
-        //TODO: add typescript examples
     )
 }

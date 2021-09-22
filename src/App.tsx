@@ -7,6 +7,7 @@ import HideShow from "./views/HideShow";
 import AddAnother from "./views/AddAnother";
 import Partials from "./views/Partials";
 import AddAnotherExtreme from "./views/AddAnotherExtreme";
+import Typescript from "./views/Typescript";
 
 function App() {
   const location = useLocation();
@@ -33,6 +34,7 @@ function App() {
             <Route path="/addanother" component={AddAnother} />
             <Route path="/partials" component={Partials} />
             <Route path="/addanotherextreme" component={AddAnotherExtreme} />
+            <Route path="/typescript" component={Typescript} />
           </Switch>
         </Col>
       </Row>
